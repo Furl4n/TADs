@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Pedro/Desktop/TAD/tad_num-complex",
-      "program": "c:/Users/Pedro/Desktop/TAD/tad_num-complex/executavel",
+      "cwd": "c:/Users/Pedro/Desktop/TAD/TAD_Esfera",
+      "program": "c:/Users/Pedro/Desktop/TAD/TAD_Esfera/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

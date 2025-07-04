@@ -2,16 +2,18 @@
 #include"num_complexo.h"
 
 int main(){
-    complexo c1=cria(), c2=cria(), c3=cria();
+    complexo c1=cria(), c2=cria();
     int real, imag;
 
-    printf("Informe a parte real e imaginaria do primeiro numero complexo (apenas numeros):");
+    printf("Informe a parte real e imaginaria do primeiro numero complexo C1 (apenas numeros):");
     scanf("%d %d", &real, &imag);
     set_nro(c1, real, imag);
 
-    printf("Informe a parte real e imaginaria do segundo numero complexo (apenas numeros):");
+    printf("Informe a parte real e imaginaria do segundo numero complexo C2 (apenas numeros):");
     scanf("%d %d", &real, &imag);
     set_nro(c2, real, imag);
+
+    complexo c3=cria();
 
     c3=soma(c1, c2);
     get_nro(c3, &real, &imag);

@@ -40,6 +40,10 @@ void apaga(complexo *p){
 }
 
 complexo soma(complexo p1, complexo p2){
+    if (p1 == NULL || p2 ==NULL){
+        return 0;
+    }
+
     complexo p3 = (complexo)malloc(sizeof(complexo));
 
     p3->real = p1->real+p2->real;
@@ -49,6 +53,10 @@ complexo soma(complexo p1, complexo p2){
 }
 
 complexo sub(complexo p1, complexo p2){
+    if (p1 == NULL || p2 ==NULL){
+        return 0;
+    }
+
     complexo p3 = (complexo)malloc(sizeof(complexo));
 
     p3->real = p1->real-p2->real;
@@ -58,6 +66,10 @@ complexo sub(complexo p1, complexo p2){
 }
 
 complexo multi(complexo p1, complexo p2){
+    if (p1 == NULL || p2 ==NULL){
+        return 0;
+    }
+    
     complexo p3 = (complexo)malloc(sizeof(complexo));
 
     p3->real = p1->real*p2->real - p1->imaginario*p2->imaginario;
