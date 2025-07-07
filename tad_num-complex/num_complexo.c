@@ -3,7 +3,7 @@
 #include "num_complexo.h"
 
 struct num_complexo{
-    int real, imaginario;
+    float real, imaginario;
 };
 
 
@@ -12,7 +12,7 @@ complexo cria(){
     return p;
 }
 
-int set_nro(complexo p, int r, int i){
+int set_nro(complexo p, float r, float i){
     if (p == NULL){
         return 0;
     }
@@ -23,7 +23,7 @@ int set_nro(complexo p, int r, int i){
     return 1;
 }
 
-int get_nro(complexo p, int *r, int *i){
+int get_nro(complexo p, float *r, float *i){
     if (p == NULL){
         return 0;
     }
@@ -41,7 +41,7 @@ void apaga(complexo *p){
 
 complexo soma(complexo p1, complexo p2){
     if (p1 == NULL || p2 ==NULL){
-        return 0;
+        return NULL;
     }
 
     complexo p3 = (complexo)malloc(sizeof(complexo));
@@ -54,7 +54,7 @@ complexo soma(complexo p1, complexo p2){
 
 complexo sub(complexo p1, complexo p2){
     if (p1 == NULL || p2 ==NULL){
-        return 0;
+        return NULL;
     }
 
     complexo p3 = (complexo)malloc(sizeof(complexo));
@@ -67,7 +67,7 @@ complexo sub(complexo p1, complexo p2){
 
 complexo multi(complexo p1, complexo p2){
     if (p1 == NULL || p2 ==NULL){
-        return 0;
+        return NULL;
     }
     
     complexo p3 = (complexo)malloc(sizeof(complexo));
