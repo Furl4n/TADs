@@ -1,8 +1,7 @@
 #include <string.h>
 #include<stdlib.h>
 #include "TAD_Lista_N_Ord.h"
-#define max_vet 20
-#define max_str 11
+
 
 struct TAD_lista{
     char pos[max_vet][max_str];
@@ -82,6 +81,6 @@ int esvazia_lista(lista list){
 int apaga_lista(lista *list){
     if(list==NULL) return 0;
 
-    free(list);
+    free(*list);
     return 1;
 }

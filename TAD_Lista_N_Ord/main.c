@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #include"TAD_Lista_N_Ord.h"
 
 int main(){
@@ -7,9 +8,13 @@ int main(){
 
     printf("%d\n", lista_vazia(teste));
     printf("%d\n", lista_cheia(teste));
+
+    char txt[11];
+
+    strcpy(txt, "teseeee");
     
-    insere_elem(teste, "teste10000");
-    get_elem_pos(teste, "teste1", &res);
+    insere_elem(teste, txt);
+    get_elem_pos(teste, txt, res);
     printf("%s", res);
 
     return 0;

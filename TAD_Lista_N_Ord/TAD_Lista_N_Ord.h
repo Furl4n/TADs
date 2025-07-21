@@ -1,4 +1,4 @@
-#define TAD_Lista_N_Ord.h
+#define TAD_LISTA_N_ORD_H
 #define max_str 11
 #define max_vet 20
 
