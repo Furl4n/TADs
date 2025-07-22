@@ -1,6 +1,8 @@
 #include <string.h>
 #include<stdlib.h>
 #include "TAD_Lista_N_Ord.h"
+#define max_str 11
+#define max_vet 20
 
 
 struct TAD_lista{
@@ -10,8 +12,7 @@ struct TAD_lista{
 
 lista cria_lista(){
     lista list;
-    list = (lista)malloc(sizeof(lista));
-
+    list = (lista)malloc(sizeof(struct TAD_lista));
     if(list!=NULL){
         list->fim = 0;
     }
@@ -38,14 +39,14 @@ int insere_elem(lista list, char elem[max_str]){
     return 1;
 }
 
-int remove_elem(lista list, char elem[max_str]){  //corrigir
+int remove_elem(lista list, char elem[max_str]){
     if(list==NULL || lista_vazia(list)==1) return 0;
 
     int aux=0;
 
     while(aux<list->fim && strcmp(list->pos[aux], elem)!=0) aux++;
 
-    if(strcmp(list->pos[aux], elem)!=0) return 0;
+    if(aux==list->fim) return 0;
 
     for(int i=aux; i<list->fim-1; i++){
         strcpy(list->pos[i], list->pos[i+1]);
@@ -55,20 +56,16 @@ int remove_elem(lista list, char elem[max_str]){  //corrigir
     return 1;
 }
 
-char* get_elem_pos(lista list, char elem[max_str], char res[max_str]){
-    if(list==NULL || lista_vazia(list)==1) return NULL;
+int get_elem_pos(lista list, int posicao, char res[max_str]){
+    if(list==NULL || lista_vazia(list)==1 || posicao-1< 0 || posicao-1>=list->fim){
+        res[0]='\0';
+        return 0;
+    } 
 
-    int aux=0;
+    strcpy(res, list->pos[posicao-1]);
 
-    while(aux<list->fim && strcmp(list->pos[aux], elem)!=0) aux++;
-    if (strcmp(list->pos[aux], elem)==0)
-    {
-        strcpy(res, list->pos[aux]);
-        return res;
+    return 1;
     }
-    
-    return NULL;
-}
 
 int esvazia_lista(lista list){
     if(list==NULL) return 0;
@@ -82,5 +79,6 @@ int apaga_lista(lista *list){
     if(list==NULL) return 0;
 
     free(*list);
+    *list = NULL;
     return 1;
 }
