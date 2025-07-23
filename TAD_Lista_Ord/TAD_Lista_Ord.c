@@ -1,17 +1,9 @@
 #include<stdlib.h>
 #include<string.h>
 #include "TAD_Lista_Ord.h"
-#define max_vet 2
-#define max_str 21
-
-struct bebida{
-    char nome[max_str];
-    int volume;
-    float preco;      
-};
 
 struct TAD_Lista_Ord{
-    struct bebida pos[max_vet];
+    bebida pos[max_vet];
     int fim;
 };
 
@@ -33,13 +25,8 @@ int lista_cheia(lista list){
     return 0;
 }
 
-int insere_ord(lista list, char nome[max_str], int volume, float preco){
+int insere_ord(lista list, bebida elem){
     if(list==NULL || lista_cheia(list)) return 0;
-
-    struct bebida elem;
-    strcpy(elem.nome, nome);
-    elem.volume = volume;
-    elem.preco = preco;
 
     if(lista_vazia(list)==1 || strcmp(elem.nome, list->pos[list->fim-1].nome)==1) 
     list->pos[list->fim]= elem;
@@ -71,7 +58,6 @@ int insere_ord(lista list, char nome[max_str], int volume, float preco){
     return 1;
 }
 
-
 int remove_ord(lista list, char nome[max_str]){
     if(list==NULL || lista_vazia(list) || strcmp(list->pos[0].nome, nome)==1 || strcmp(nome, list->pos[list->fim-1].nome)==1)
     return 0;
@@ -92,4 +78,24 @@ int remove_ord(lista list, char nome[max_str]){
     
     list->fim--;
     return 1;    
+}
+
+int get_elem_pos(lista list, int posicao, bebida *elem){
+    if(list==NULL || lista_vazia(list) || list->fim < posicao || posicao<0) return 0;
+
+    else{
+        *elem = list->pos[posicao-1];
+        return 1;
+    }
+}
+
+int esvazia_lista(lista list){
+    if(list==NULL) return 0;
+    list->fim=0;
+    return 1;
+}
+
+void apaga_lista(lista *list){
+    free(*list);
+    *list=NULL;
 }

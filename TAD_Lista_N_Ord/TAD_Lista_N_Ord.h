@@ -11,4 +11,4 @@ int insere_elem(lista list, char elem[max_str]);
 int remove_elem(lista list, char elem[max_str]);
 int get_elem_pos(lista list, int posicao, char res[max_str]);
 int esvazia_lista(lista list);
-int apaga_lista(lista *list);
+void apaga_lista(lista *list);
