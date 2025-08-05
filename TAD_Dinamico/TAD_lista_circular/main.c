@@ -63,6 +63,26 @@ void remover(lista *list){
     }
 }
 
+void comparacao(lista list){
+    lista temp = criar_lista();
+    int tamanho=0;
+
+    printf("\nInsira a quantidade de caracteres da lista que deseja comparar: ");
+    scanf("%d", &tamanho);
+
+    for(int i=0; i<tamanho; i++){
+        inserir(&temp);
+    }
+
+    if(iguais(list, temp)==1){
+        printf("\n->As listas são iguais.\n");
+    } else{
+        printf("\n->As listas não são iguais\n");
+    }
+
+    return;
+}
+
 int main(){
     lista list = NULL;
     int condicao = 0;
@@ -78,6 +98,7 @@ int main(){
         //printf("4-Inserir o caracter no final da lista\n");
         printf("4-Remover o caracter da lista\n");
         printf("5-Verificar tamanho da lista\n");
+        printf("6-Verificar se duas listas são iguais\n");
         //printf("6-Remover o caracter no final da lista\n");
         //printf("7-Apagar lista\n");
         printf("\nEscolha uma das opcoes acima: ");
@@ -135,6 +156,9 @@ int main(){
                     printf("\n->A lista esta vazia\n");
                 }
                 break;
+
+            case 6:
+                comparacao(list);
 
             default:
                 break;

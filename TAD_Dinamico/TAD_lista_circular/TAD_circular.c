@@ -108,3 +108,28 @@ int tamanho_lista(lista list, int *tamanho){
     
     return 1;
 }
+
+int iguais(lista list1, lista list2){
+    if(lista_vazia(list1)==1 && lista_vazia(list2)==1) return 1;
+
+    lista aux1 = list1, aux2 = list2;
+    int contador, tamanho1=0, tamanho2=0;
+
+    tamanho_lista(list1, &tamanho1);
+    tamanho_lista(list2, &tamanho2);
+
+    if(tamanho1==tamanho2){
+        while (aux1->info = aux2->info || aux1->prox!=list1){
+            contador++;
+            aux1 = aux1->prox;
+            aux2 = aux2->prox;
+        }
+
+        if(tamanho1 == contador) return 1;
+
+        else return 0;
+    }
+
+    else return 0;
+
+}
