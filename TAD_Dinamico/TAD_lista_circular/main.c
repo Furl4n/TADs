@@ -95,11 +95,9 @@ int main(){
         printf("1-Criar Lista\n");
         printf("2-Verificar se a lista esta vazia\n");
         printf("3-Inserir o caracter da lista\n");
-        //printf("4-Inserir o caracter no final da lista\n");
         printf("4-Remover o caracter da lista\n");
         printf("5-Verificar tamanho da lista\n");
         printf("6-Verificar se duas listas são iguais\n");
-        //printf("6-Remover o caracter no final da lista\n");
         //printf("7-Apagar lista\n");
         printf("\nEscolha uma das opcoes acima: ");
 

@@ -6,16 +6,37 @@ struct no{
     struct no *prox;
 };
 
+/*
+Entrada: Nenhuma
+Pré-condição: Nenhuma
+Processo: Cria a lista
+Saída: Endereço ad lista
+Pós-condição: Nenhuma
+*/
 lista criar_lista(){
     return NULL;
 }
 
+/*
+Entrada: endereço de uma lista (List)
+Pré-condição: Nenhuma
+Processo: Confere se a lista está vazia
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: Nenhuma
+*/
 int lista_vazia(lista list){
     if(list==NULL) return 1;
 
     else return 0;
 }
 
+/*
+Entrada: endereço do endereço de uma lista (List), caracter (elem)
+Pré-condição: Nenhuma
+Processo: Adiciona o elemento no inicio da lista
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: Lista com um elemento a mais
+*/
 int insere_inicio(lista *list, char elem){
     lista novo = (lista)malloc(sizeof(struct no));
     if(novo==NULL) return 0;
@@ -33,6 +54,13 @@ int insere_inicio(lista *list, char elem){
     return 1;
 }
 
+/*
+Entrada: endereço do endereço de uma lista (List), caracter (elem)
+Pré-condição: Nenhuma
+Processo: Adiciona o elemento no final da lista
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: Lista com um elemento a mais
+*/
 int insere_final(lista *list, char elem){
     lista novo = (lista)malloc(sizeof(struct no));
     if(novo==NULL) return 0;
@@ -50,6 +78,13 @@ int insere_final(lista *list, char elem){
     return 1;
 }
 
+/*
+Entrada: Endereço do endereço de uma lista (List), endereço do elemento removido (elem)
+Pré-condição: A lista não estar vazia
+Processo: Apaga o elemento no começo da lista
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: O caracter com o elemnto removido da lista
+*/
 int remove_inicio(lista *list, char *elem){
     if(lista_vazia(*list)==1) return 0;
 
@@ -70,6 +105,13 @@ int remove_inicio(lista *list, char *elem){
     return 1;
 }
 
+/*
+Entrada: Endereço do endereço de uma lista (List), endereço do elemento removido (elem)
+Pré-condição: A lista não estar vazia
+Processo: Apaga o elemento no final da lista
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: O caracter com o elemnto removido da lista
+*/
 int remove_final(lista *list, char *elem){
     if(lista_vazia(*list)==1) return 0;
 
@@ -95,6 +137,13 @@ int remove_final(lista *list, char *elem){
     return 1;
 }
 
+/*
+Entrada: Endereço da lista (List), endereco de 1 inteiro (tamanho)
+Pré-condição: A lista não estar vazia
+Processo: Conta quantos elementos tem na lista
+Saída: 1 (sucesso) ou 0 (falha)
+Pós-condição: Inteiro com o tamanho da lista
+*/
 int tamanho_lista(lista list, int *tamanho){
     if(lista_vazia(list)==1) return 0;
 
@@ -109,6 +158,13 @@ int tamanho_lista(lista list, int *tamanho){
     return 1;
 }
 
+/*
+Entrada: Endereço de 2 listas (list1 e list2) 
+Pré-condição: Nenhuma
+Processo: Compara se as duas listas são iguais
+Saída: 1 (são iguais) ou 0 (não são iguais)
+Pós-condição: Nenhuma
+*/
 int iguais(lista list1, lista list2){
     if(lista_vazia(list1)==1 && lista_vazia(list2)==1) return 1;
 
