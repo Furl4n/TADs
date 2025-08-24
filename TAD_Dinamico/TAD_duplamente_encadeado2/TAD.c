@@ -53,17 +53,49 @@ int insere_ord(lista *list, int elem){
     return 1;
 }
 
-int get_elem_pos(lista *list, int pos, int *elem){
-    if(lista_vazia(*list) || pos<=0) return 0;
+int remove_ord(lista *list, int elem){
+    if(lista_vazia(*list)) return 0;
 
-    lista aux = (*list);
+    lista aux = *list;
+
+    while (aux->prox!=NULL && aux->info!=elem){
+        aux=aux->prox;
+    }
+
+    if(aux->info!=elem) return 0;
+
+    if(aux->ant!=NULL) aux->ant->prox = aux->prox;
+    if(aux->prox!=NULL) aux->prox->ant = aux->ant;
+    if(aux==*list) *list = aux->prox;
+
+    free(aux);
+    return 1;
+}
+
+int get_elem_pos(lista list, int pos, int *elem){
+    if(lista_vazia(list) || pos<=0) return 0;
+
+    lista aux = (list);
     int i = 1;
     while(aux!=NULL && i<pos){
         aux = aux->prox;
+        i++;
     }
 
     if(aux==NULL) return 0;
 
     *elem = aux->info;
     return 1;
+}
+
+void apaga_lista(lista *list){
+    if(lista_vazia(*list)) return;
+
+    while (*list!=NULL){
+        lista aux = (*list)->prox;
+        free(*list);
+        *list = aux;
+    }
+    *list=NULL;
+    return;
 }

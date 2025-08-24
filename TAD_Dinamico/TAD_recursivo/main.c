@@ -2,51 +2,53 @@
 #include "TAD.h"
 
 int inserir(lista *list){
-    int elem;
+    char elem;
 
 
-    printf("\nInsira o inteiro: ");
-    scanf("%d", &elem);
+    printf("\nInsira o caracter: ");
+    getchar();
+    scanf("%c", &elem);
     
 
     if (insere_ord(list, elem)==1){
-        printf("\n->O inteiro foi adicionado com sucesso\n");
+        printf("\n->O caracter foi adicionado com sucesso\n");
         return 1;
     } else{
-        printf("\n->Nao foi possível adicionar o inteiro\n");
+        printf("\n->Nao foi possível adicionar o caracter\n");
         return 0;
     }
 }
 
 int remover(lista *list){
 
-    int elem;
+    char elem;
 
-    printf("Qual inteiro deseja apagar? ");
-    scanf("%d", &elem);
+    printf("Qual caracter deseja apagar? ");
+    getchar();
+    scanf("%c", &elem);
 
     if(remove_ord(list, elem)==1){
-        printf("\n->Inteiro apagado com sucesso\n");
+        printf("\n->Caracter apagado com sucesso\n");
         return 1;
     } else{
-        printf("\n->Nao foi possível apagar o inteiro\n");
+        printf("\n->Nao foi possível apagar o caracter\n");
         return 0;
     }
 }
 
 int get_pos(lista list){
 
-    int elem=0;
+    char elem;
     int pos;
 
     printf("Digite a posicao que deseja copiar: ");
     scanf("%d", &pos);
 
     if(get_elem_pos(list, pos, &elem)){
-        printf("\n->inteiro: %d\n", elem);
+        printf("\n->caracter: %c\n", elem);
         return 1;
     } else{
-        printf("\n->Nao foi possivel copiar o inteiro nessa posicao\n");
+        printf("\n->Nao foi possivel copiar o caracter nessa posicao\n");
         return 0;
     }
 }
@@ -58,13 +60,13 @@ int main(){
     while (1){
         int resposta = -1;
 
-        printf("\n---MENU TAD LISTA ORDENADA DE INTEIROS---\n");
+        printf("\n---MENU TAD LISTA ORDENADA DE CARACTER---\n");
         printf("0-Encerrar o programa\n");
         printf("1-Criar lista\n");
         printf("2-Verificar se a lista esta vazia\n");
-        printf("3-Inserir inteiro na lista\n");
-        printf("4-Remover inteiro da lista\n");
-        printf("5-Pegar inteiro por posicao\n");
+        printf("3-Inserir caracter na lista\n");
+        printf("4-Remover caracter da lista\n");
+        printf("5-Pegar caracter por posicao\n");
         printf("6-Apagar lista\n");
         printf("\nEscolha uma das opcoes acima: ");
 
