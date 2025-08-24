@@ -33,7 +33,7 @@ int push(pilha stack, funcionario elem){
 }
 
 int pop(pilha stack, funcionario *elem){
-    if(pilha_cheia(stack) || stack==NULL) return 0;
+    if(pilha_vazia(stack) || stack==NULL) return 0;
 
     *elem = stack->vet[stack->topo];
     stack->topo--;
@@ -41,7 +41,7 @@ int pop(pilha stack, funcionario *elem){
 }
 
 int get_topo(pilha stack, funcionario *elem){
-    if(pilha_cheia(stack) || stack==NULL) return 0;
+    if(pilha_vazia(stack) || stack==NULL) return 0;
 
     *elem = stack->vet[stack->topo];
     return 1;
@@ -54,7 +54,7 @@ void apaga_pilha(pilha *stack){
 }
 
 int esvazia_pilha(pilha stack){
-    if(pilha_cheia(stack) || stack==NULL) return 0;
+    if(stack==NULL) return 0;
 
     stack->topo  = -1;
     return 1;
