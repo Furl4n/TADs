@@ -11,7 +11,7 @@ pilha_char cria_pilha_char() {
     return NULL;
 }
 
-int pilha_char_vazia(pilha_char stack) {
+int pilha_vazia_char(pilha_char stack) {
     if (stack == NULL) return 1;
     return 0;
 }
@@ -28,7 +28,7 @@ int push_char(pilha_char* stack, char elem) {
 }
 
 int pop_char(pilha_char* stack, char* elem) {
-    if (pilha_char_vazia(*stack)) return 0;
+    if (pilha_vazia_char(*stack)) return 0;
 
     pilha_char aux = *stack;
 
@@ -42,14 +42,14 @@ int pop_char(pilha_char* stack, char* elem) {
 }
 
 int get_topo_char(pilha_char stack, char* elem) {
-    if (pilha_char_vazia(stack)) return 0;
+    if (pilha_vazia_char(stack)) return 0;
 
     *elem = stack->info;
     return 1;
 }
 
 void apaga_pilha_char(pilha_char* stack) {
-    if (pilha_char_vazia(*stack)) return;
+    if (pilha_vazia_char(*stack)) return;
 
     pilha_char aux;
     while (*stack != NULL) {
