@@ -33,6 +33,23 @@ int remover(fila queue){
     }
 }
 
+int imprimir(fila queue){
+    int tamanho;
+
+    printf("\n->Elementos em ordem da fila:\n");
+
+    tamanho_fila(queue, &tamanho);
+
+    for(int i=1; i<=tamanho; i++){
+        char elem[max_str];
+
+        remove_ini(queue, elem);
+        printf("%d-%s\n", i, elem);
+        insere_fim(queue, elem);
+    }
+    
+}
+
 int main(){
     fila queue = NULL;
     int tamanho;
@@ -44,18 +61,19 @@ int main(){
         printf("1-Criar fila\n");
         printf("2-Verificar se a fila esta vazia\n");
         printf("3-Verificar se a fila esta cheia\n");
-        printf("4-Inserir texto na fila\n");
-        printf("5-Remover texto da fila\n");
+        printf("4-Inserir texto no final da fila\n");
+        printf("5-Remover texto do inicio da fila\n");
         printf("6-Esvaziar fila\n");
         printf("7-Apagar fila\n");
-        printf("8-Verificar tamanho da fila");
+        printf("8-Verificar tamanho da fila\n");
+        printf("9-Imprimir lista\n");
         printf("\nEscolha uma das opcoes acima: ");
 
         scanf("%d", &resposta);
 
         if(resposta==0){
             printf("\n->Programa encerrado\n");
-            apaga_fila(queue);
+            apaga_fila(&queue);
             return 0;
         }
 
@@ -113,6 +131,10 @@ int main(){
                 case 8:
                     tamanho_fila(queue, &tamanho);
                     printf("\n->A fila tem %d string(s)", tamanho);
+                    break;
+
+                case 9:
+                    imprimir(queue);
             }
         }
     }
