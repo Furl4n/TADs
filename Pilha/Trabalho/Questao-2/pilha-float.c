@@ -7,7 +7,7 @@ struct no {
     struct no* prox;
 };
 
-pilha_float cria_pilha() {
+pilha_float cria_pilha_float() {
     return NULL;
 }
 

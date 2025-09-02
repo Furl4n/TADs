@@ -2,7 +2,7 @@
 
 typedef struct no* pilha_float;
 
-pilha_float cria_pilha();
+pilha_float cria_pilha_float();
 int pilha_vazia_float(pilha_float stack);
 int push_float(pilha_float *stack, float elem);
 int pop_float(pilha_float *stack, float *elem);
